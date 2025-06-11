@@ -3,13 +3,12 @@ import styles from "./boasVindas.module.css"
 import { Button } from "../../components/Button/button";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { useTema } from "../../context/TemaContext";
+import { Container } from "../../components/Container/container";
 
 export function BoasVindas() {
-  const [temaEscuro, setTemaEscuro] = useState(false);
+  const { temaEscuro, alterarTema } = useTema();
 
-  const mudarTema = () => {
-    setTemaEscuro(!temaEscuro)
-  }
 
   const navigate = useNavigate();
 
@@ -21,15 +20,14 @@ export function BoasVindas() {
 
   return (
     <div>
-      <Navbar mudarTema={mudarTema} temaEscuro={temaEscuro} />
-      <div className={`${styles.container} ${temaEscuro ? styles.escuro : styles.claro}`}>
+      <Navbar mudarTema={alterarTema} temaEscuro={temaEscuro} />
+       <Container temaEscuro={temaEscuro}>
         <div className={styles.box}>
           <h2>{mensagem}</h2> <br />
           <Button onClick={handleMensagem} texto="Saiba mais" type="button"></Button> <br />
           <br /> <Button onClick={() => navigate("/tarefas")} texto="Lista de tarefas" type="button"></Button>
         </div>
-
-      </div>
+    </Container>
 
     </div>
   )

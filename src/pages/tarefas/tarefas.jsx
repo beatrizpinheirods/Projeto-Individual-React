@@ -2,13 +2,11 @@ import { Navbar } from "../../components/Navbar/navbar";
 import styles from "./tarefas.module.css"
 import { Button } from "../../components/Button/button";
 import { useState } from "react";
+import { Container } from "../../components/Container/container"
+import { useTema } from "../../context/TemaContext";
 
 export function Tarefas() {
-  const [temaEscuro, setTemaEscuro] = useState(false);
-
-  const mudarTema = () => {
-    setTemaEscuro(!temaEscuro)
-  }
+  const { temaEscuro, alterarTema } = useTema();
 
   const [listaTarefas, setListaTarefas] = useState([]);
   const [tarefa, setTarefa] = useState("");
@@ -22,12 +20,12 @@ export function Tarefas() {
 
   return (
     <div>
-      <Navbar mudarTema={mudarTema} temaEscuro={temaEscuro} />
-      <div className={`${styles.container} ${temaEscuro ? styles.escuro : styles.claro}`}>
+      <Navbar mudarTema={alterarTema} temaEscuro={temaEscuro} />
+      <Container temaEscuro={temaEscuro}>
         <div className={styles.box}>
           <h2>Lista de Tarefas:</h2> <br />
-          <form onSubmit={(e) => { e.preventDefault(); addTarefas(); }} className={styles.form}>
-            <input className={styles.inputStyle}
+          <form onSubmit={(e) => { e.preventDefault(); addTarefas(); }}>
+            <input
               type="text"
               placeholder="Digite aqui sua tarefa"
               value={tarefa}
@@ -36,11 +34,11 @@ export function Tarefas() {
             <Button onClick={addTarefas} texto="Adicionar tarefa" type="submit"></Button>
 
             {listaTarefas.map((t, index) => (
-              <input className={styles.inputStyle} type="text" value={t} key={index}></input>
+              <input type="text" value={t} key={index}></input>
             ))}
           </form>
         </div>
-      </div>
+      </Container>
     </div>
   )
 

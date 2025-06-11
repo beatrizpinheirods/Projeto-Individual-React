@@ -6,7 +6,7 @@ export function Navbar({ mudarTema, temaEscuro }) {
       <h3>Minha Lista de Tarefas</h3>
 
       <button onClick={mudarTema}>
-        {temaEscuro ? 'Tracar para modo claro' : 'Trocar para modo escuro'}
+        {temaEscuro ? 'Trocar para modo claro' : 'Trocar para modo escuro'}
       </button>
 
     </nav>

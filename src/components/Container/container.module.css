@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-image 0.3s, image 0.3s;
+}
+
+.claro {
+  background-image: url('../../assets/CFE3D8C9-FA47-463E-90B6-2F327A7F5B07.jpeg');
+  background-size: cover;
+}
+
+.escuro {
+  background-image: url('../../assets/25F43ECF-DEE4-4C0A-A669-141E8C49CD12.jpeg');
+  background-size: cover;
+}
