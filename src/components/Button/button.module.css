@@ -1,0 +1,10 @@
+.buttonStyle {
+  width: 13rem;
+  background-color: #7b7a83fb;
+  color: #ffffff;
+  padding: 1rem;
+  border: 1.5px solid #c99fa1;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}

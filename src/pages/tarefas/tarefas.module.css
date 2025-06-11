@@ -14,17 +14,36 @@
   background-size: cover;
 }
 
+.escuro {
+  background-image: url('../../assets/25F43ECF-DEE4-4C0A-A669-141E8C49CD12.jpeg');
+  background-size: cover;
+}
+
 .box {
   width: 30%;
   background-color: #c2999962;
   padding: 6rem;
   border: 1.5px solid #b68588;
   border-radius: 10px;
+  color: #fff;
   align-items: center;
   justify-content: center;
 }
 
-.escuro {
-  background-image: url('../../assets/25F43ECF-DEE4-4C0A-A669-141E8C49CD12.jpeg');
-  background-size: cover;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.inputStyle {
+  border: 1px solid #b68588;
+  border-radius: 5px;
+  width: 20rem;
+  font-size: 1rem;
+  color: #000000;
+  padding: 0.5rem;
 }
